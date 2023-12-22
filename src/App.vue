@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Hero from "./components/Hero.vue";
+import OurCourses from "./components/OurCourses.vue";
 import Reasons from "./components/Reasons.vue";
 </script>
 
@@ -7,6 +8,7 @@ import Reasons from "./components/Reasons.vue";
   <div class="app">
     <Hero />
     <Reasons />
+    <OurCourses />
   </div>
 </template>
 

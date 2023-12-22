@@ -1,38 +1,95 @@
 <template>
   <div class="reasons my-10 bg-white">
     <div class="container">
-      <div class="content flex-none w-1/2">
-        <h1
-          style="font-size: 64px"
-          class="header font-righteous text-gray-700 font-bold"
-        >
-          choose Knowleducation over others...!
-        </h1>
-        <p class="text-gray-500 leading-10 text-lg my-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut labore,
-          quas, inventore at architecto odio recusandae natus veniam itaque illo
-          cupiditate praesentium aspernatur odit, sint beatae ullam facere.
-          Reiciendis, necessitatibus.
-        </p>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <div class="content">
-            <h1 class="font-righteous text-gray-700 font-bold">First reason</h1>
-            <p class="text-gray-400 font-sm font-bold">
-              Lorem ipsum dolor sit.
-            </p>
-          </div>
+      <div class="flex gap-14 items-center">
+        <div class="cards flex flex-col gap-5">
           <div
-            style="height: 100px; width: 100px"
-            class="img-container rounded-full bg-yellow-200"
-          ></div>
+            v-for="reason in reasons"
+            class="group card items-center relative px-8 rounded-xl bg-white shadow-md flex gap-4 cursor-pointer transition-transform duration-300 transform-gpu"
+          >
+            <span
+              style="font-size: 48px"
+              class="step-counter -z-20 text-gray-200 opacity-75 text-2xl font-bold absolute right-0 rotate-45"
+            >
+              0nth
+            </span>
+            <div
+              style="height: 100px; width: 100px"
+              class="img-container flex justify-center rounded-full bg-yellow-100"
+            >
+              <img
+                width="40"
+                height="140"
+                class="transition-transform translate-y-[-14px] duration-300 transform-gpu group-hover:rotate-[-10deg]"
+                :src="reason.image"
+                alt="hand"
+              />
+            </div>
+            <div class="content absolute right-10 -z-20">
+              <h1 class="font-righteous text-2xl text-gray-700 font-bold">
+                {{ reason.title }}
+              </h1>
+              <p class="text-gray-500 font-md">
+                {{ reason.desc }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="content flex-none w-1/2">
+          <h1
+            style="font-size: 34px"
+            class="header font-righteous text-em-700 font-bold"
+          >
+            choose Knowleducation over
+            <span
+              class="absolute rotate-[-30deg] text-emerald-500 translate-y-[-75%]"
+              >ALL</span
+            >
+            others...!
+          </h1>
+          <p class="text-gray-400 leading-10 text-lg my-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut labore,
+            quas, inventore at architecto odio recusandae natus veniam itaque
+            illo cupiditate praesentium aspernatur odit, sint beatae ullam
+            facere. Reiciendis, necessitatibus.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { reactive } from "vue";
+const imageHand0 = new URL("../assets/img/hand-0.png", import.meta.url).href;
+const imageHand1 = new URL("../assets/img/hand-1.png", import.meta.url).href;
+const imageHand2 = new URL("../assets/img/hand-2.png", import.meta.url).href;
 
-<style scoped></style>
+const reasons = reactive({
+  hand0: {
+    image: imageHand0,
+    title: "Zeroth reason",
+    desc: "Lorem ipsum dolor sit.",
+    stepper: "0nth",
+  },
+  hand1: {
+    image: imageHand1,
+    title: "First reason",
+    desc: "Lorem ipsum dolor sit.",
+    stepper: "1st",
+  },
+  hand2: {
+    image: imageHand2,
+    title: "Second reason",
+    desc: "Lorem ipsum dolor sit.",
+    stepper: "2nd",
+  },
+});
+</script>
+
+<style scoped>
+.card {
+  height: 140px;
+  width: 350px;
+}
+</style>
