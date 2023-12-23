@@ -37,15 +37,16 @@
         </div>
         <div class="content flex-none w-1/2">
           <h1
-            style="font-size: 34px"
+            style="font-size: 30px"
             class="header font-righteous text-em-700 font-bold"
           >
-            choose Knowleducation over
+            choose Knowleducation <span class="over">over</span>
+
             <span
               class="absolute rotate-[-30deg] text-emerald-500 translate-y-[-75%]"
               >ALL</span
             >
-            others...!
+            <span class="others"> others...!</span>
           </h1>
           <p class="text-gray-400 leading-10 text-lg my-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut labore,
@@ -91,5 +92,46 @@ const reasons = reactive({
 .card {
   height: 140px;
   width: 350px;
+}
+.over {
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+}
+.over::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  display: block;
+  position: absolute;
+  right: -5px;
+  bottom: -18px;
+  background: transparent;
+  border-top: 5px solid #10b981;
+  border-bottom: none;
+  border-radius: 50%;
+  transform: rotate(120deg);
+  z-index: 1222;
+}
+.others {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  z-index: 1222;
+}
+.others::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  display: block;
+  position: absolute;
+  left: -8px;
+  bottom: -18px;
+  background: transparent;
+  border-top: 5px solid #10b981;
+  border-bottom: none;
+  border-radius: 50%;
+  transform: rotate(245deg);
+  z-index: 1;
 }
 </style>

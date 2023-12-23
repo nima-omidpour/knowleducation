@@ -1,5 +1,5 @@
 <template>
-  <div class="reasons my-10 bg-slate-100 py-10">
+  <div class="reasons mt-10 bg-slate-100 py-10">
     <div class="container">
       <div class="header flex gap-2 mb-10">
         <h1 class="font-righteous text-3xl text-gray-700 font-bold">
