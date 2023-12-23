@@ -1,5 +1,13 @@
 <template>
   <div class="contact mt-0 bg-slate-100">
+    <div class="container">
+      <div class="header flex gap-2 mb-10">
+        <h1 class="font-righteous text-3xl text-gray-700 font-bold">
+          Need any help...?
+        </h1>
+      </div>
+    </div>
+
     <div class="container h-full bg-white rounded-xl py-10">
       <div class="form-container h-full w-full flex justify-around">
         <form class="flex flex-wrap">
@@ -7,7 +15,7 @@
             <div class="flex items-center mb-2">
               <label
                 for="fullName"
-                class="block text-sm font-medium text-gray-900 dark:text-white"
+                class="block text-md font-medium text-gray-500 dark:text-white"
               >
                 Full Name
               </label>
@@ -27,7 +35,7 @@
             <div class="flex items-center mb-2">
               <label
                 for="email"
-                class="block text-sm font-medium text-gray-900 dark:text-white"
+                class="block font-md font-medium text-gray-500 dark:text-white"
               >
                 Email
               </label>
@@ -45,7 +53,7 @@
             <div class="flex items-center mb-2">
               <label
                 for="message"
-                class="block text-sm font-medium text-gray-900 dark:text-white"
+                class="block font-md font-medium text-gray-500 dark:text-white"
               >
                 Your message
               </label>
@@ -63,7 +71,7 @@
           <button
             type="button"
             @click="handleSubmit"
-            class="text-white bg-emerald-500 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="text-white bg-emerald-500 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-full text-sm w-full sm:w-auto px-8 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Submit
           </button>

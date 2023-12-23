@@ -9,7 +9,15 @@
     }"
     @mousemove="handleMouseMove"
   >
-    <div :style="eyeStyles" class="pupil"></div>
+    <div
+      :style="eyeStyles"
+      class="pupil relative rounded-full bg-slate-700 transition-all duration-100 ease-out"
+    >
+      <div
+        v-if="isSmallEye"
+        class="pupil absolute right-1/2 top-1/3 -translate-y-1/2 translate-x-full w-5 h-5 rounded-full bg-slate-500 transition-all duration-100 ease-out"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -17,14 +25,19 @@
 import { defineProps } from "vue";
 import { ref } from "vue";
 
-const props = defineProps([
-  "eyeHeight",
-  "eyeWidth",
-  "eyePadding",
-  "borderWidth",
-  "pupilHeight",
-  "pupilWidth",
-]);
+const props = defineProps({
+  eyeHeight: String,
+  eyeWidth: String,
+  pupilWidth: String,
+  pupilHeight: String,
+  eyePadding: String,
+  borderWidth: String,
+
+  isSmallEye: {
+    type: Boolean,
+    default: true,
+  },
+});
 
 const {
   eyeHeight,
@@ -33,6 +46,7 @@ const {
   pupilHeight,
   eyePadding,
   borderWidth,
+  isSmallEye,
 } = props as {
   eyeHeight: string;
   eyeWidth: string;
@@ -40,6 +54,7 @@ const {
   pupilWidth: string;
   borderWidth: string;
   eyePadding: string;
+  isSmallEye: boolean;
 };
 const eyeStyles = ref({ height: pupilHeight, width: pupilWidth });
 
@@ -66,15 +81,4 @@ const handleMouseMove = (event: MouseEvent) => {
 };
 </script>
 
-<style scoped>
-.eye {
-  position: absolute;
-  border-width: 30px;
-}
-
-.pupil {
-  background-color: #333;
-  border-radius: 50%;
-  transition: all 0.1s ease-out;
-}
-</style>
+<style scoped></style>

@@ -11,7 +11,7 @@
               style="font-size: 48px"
               class="step-counter -z-20 text-gray-200 opacity-75 text-2xl font-bold absolute right-0 rotate-45"
             >
-              0nth
+              {{ reason.stepper }}
             </span>
             <div
               style="height: 100px; width: 100px"
@@ -38,15 +38,16 @@
         <div class="content flex-none w-1/2">
           <h1
             style="font-size: 30px"
-            class="header font-righteous text-em-700 font-bold"
+            class="header font-righteous text-gray-700 text-em-700 font-bold"
           >
-            choose Knowleducation <span class="over">over</span>
+            choose Knowleducation
+            <span class="over relative inline-block">over</span>
 
             <span
               class="absolute rotate-[-30deg] text-emerald-500 translate-y-[-75%]"
               >ALL</span
             >
-            <span class="others"> others...!</span>
+            <span class="others relative inline-block"> others...!</span>
           </h1>
           <p class="text-gray-400 leading-10 text-lg my-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut labore,
@@ -94,8 +95,6 @@ const reasons = reactive({
   width: 350px;
 }
 .over {
-  position: relative;
-  display: inline-block;
   margin-right: 8px;
 }
 .over::after {
@@ -114,8 +113,6 @@ const reasons = reactive({
   z-index: 1222;
 }
 .others {
-  position: relative;
-  display: inline-block;
   margin-left: 8px;
   z-index: 1222;
 }

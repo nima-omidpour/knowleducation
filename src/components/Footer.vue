@@ -25,13 +25,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const isIconClicked = ref(false);
+const isIconClicked = ref<boolean>(false);
 
-const handleMouseDown = () => {
+const handleMouseDown = (): void => {
   isIconClicked.value = true;
 };
 
-const handleMouseUp = () => {
+const handleMouseUp = (): void => {
   isIconClicked.value = false;
 };
 </script>
